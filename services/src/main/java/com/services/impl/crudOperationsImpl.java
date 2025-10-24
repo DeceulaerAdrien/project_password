@@ -11,7 +11,7 @@ public class crudOperationsImpl implements crudOperations<User> {
     }
 
     @Override
-    public Users read(int id) {
+    public User read(int id) {
         throw new UnsupportedOperationException("Unimplemented method 'read'");
     }
 

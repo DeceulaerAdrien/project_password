@@ -1,5 +1,10 @@
 package com.entities;
 
-public class User {
+import java.util.UUID;
 
+public class User extends BaseEntity<UUID> {
+
+    private String name;
+    private String ;
+    
 }
