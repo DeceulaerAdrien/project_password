@@ -21,26 +21,15 @@ public abstract class BaseEntity<T extends Serializable> {
         return id;
     }
 
-    public void setId(T id) {
-        this.id = id;
-    }
-
     public LocalDateTime getCreatedAt() {
         return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-
-        createdAt = LocalDateTime.now();
-        this.createdAt = createdAt;
     }
 
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        updatedAt = LocalDateTime.now();
-        this.updatedAt = updatedAt;
+    public void setUpdatedAt() {
+        this.updatedAt = LocalDateTime.now();
     }
 }

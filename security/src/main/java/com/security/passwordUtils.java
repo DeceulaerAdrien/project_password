@@ -9,7 +9,7 @@ import java.security.spec.InvalidKeySpecException;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
-class passwordUtils {
+public class passwordUtils {
     private static final SecureRandom RANDOM = new SecureRandom();
     private static final int SALT_LEN = 16;
     private static final int ITERATIONS = 100_000;

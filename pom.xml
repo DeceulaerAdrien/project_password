@@ -11,11 +11,9 @@
     <modules>
         <module>services</module>
         <module>security</module>
-        <module>storage</module>
+        <module>models</module>
         <module>ui</module>
     </modules>
-
-
 
     <properties>
         <maven.compiler.source>25</maven.compiler.source>
