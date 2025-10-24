@@ -34,4 +34,32 @@ public class User extends BaseEntity<UUID> {
         this.passwordHash = passwordHash;
     }
 
+    public String getSalt() {
+        return salt;
+    }
+
+    @Override
+    public String toString() {
+        return "User [username=" + username + ", passwordHash=" + passwordHash + ", salt=" + salt + "]";
+    }
+
+    public Boolean verifyPassword(char[] attemptedPassword) throws Exception {
+        return passwordUtils.verify(attemptedPassword, this.passwordHash, this.salt);
+    }
+
+    // Test
+    public class Main {
+        public static void main(String[] args) throws Exception {
+            // Création d'un utilisateur
+            User user = new User("Alice", "monSuperMotDePasse123".toCharArray());
+            System.out.println("Username : " + user.getUsername());
+            System.out.println("Salt : " + user.getSalt());
+            System.out.println("Hash : " + user.getPasswordHash());
+
+            // Vérification du mot de passe
+            boolean correct = user.verifyPassword("monSuperMotDePasse123".toCharArray());
+            System.out.println("Mot de passe correct ? " + correct);
+        }
+    }
+
 }

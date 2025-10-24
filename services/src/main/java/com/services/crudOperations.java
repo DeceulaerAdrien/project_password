@@ -1,11 +1,11 @@
 package com.services;
 
-public interface crudOperations<T> {
+public interface crudOperations<ID, T> {
     void create(T obj);
 
-    T read(int id);
+    T read(ID id);
 
     void update(T obj);
 
-    void delete(int id);
+    void delete(ID id);
 }

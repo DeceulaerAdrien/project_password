@@ -35,6 +35,25 @@ public class passwordUtils {
         return slowEquals(Base64.getDecoder().decode(storedHash), Base64.getDecoder().decode(attemptedHash));
     }
 
+    /**
+     * Compare deux tableaux d'octets pour l'égalité d'une manière visant à réduire
+     * les fuites par canaux temporels (timing).
+     *
+     * La méthode renvoie true uniquement si les deux tableaux ont la même longueur
+     * et que chaque octet correspondant est identique. Les différences sont
+     * accumulées à l'aide d'opérations bit à bit et la méthode évite les sorties
+     * précoces lorsque les longueurs correspondent, ce qui contribue à empêcher la
+     * divulgation de l'indice du premier octet différent via le temps d'exécution.
+     *
+     * Remarque : si l'un des tableaux est null, cette méthode lèvera une
+     * NullPointerException.
+     *
+     * @param a le premier tableau d'octets à comparer
+     * @param b le second tableau d'octets à comparer
+     * @return true si les deux tableaux sont non null, ont la même longueur et
+     *         contiennent des octets identiques ; false sinon
+     */
+
     private static boolean slowEquals(byte[] a, byte[] b) {
         if (a.length != b.length)
             return false;
