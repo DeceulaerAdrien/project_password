@@ -51,7 +51,7 @@ public class passwordUtils {
      * @param a le premier tableau d'octets à comparer
      * @param b le second tableau d'octets à comparer
      * @return true si les deux tableaux sont non null, ont la même longueur et
-     *         contiennent des octets identiques ; false sinon
+     *         contiennent des octets identiques ; sinon false
      */
 
     private static boolean slowEquals(byte[] a, byte[] b) {
