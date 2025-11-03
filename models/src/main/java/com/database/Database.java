@@ -15,6 +15,7 @@ public class Database {
         try (Connection conn = getConnection()) {
             if (conn != null) {
                 System.out.println("Connection SQLite établie");
+                DatabaseInitializer.createTables();
             }
         } catch (SQLException e) {
             System.out.println("Erreur de connexion SQLite : " + e.getMessage());

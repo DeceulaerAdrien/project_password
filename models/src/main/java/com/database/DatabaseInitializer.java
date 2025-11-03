@@ -11,17 +11,18 @@ public class DatabaseInitializer {
                 passwordHash TEXT NOT NULL,
                 salt TEXT NOT NULL,
                 createdAt TEXT NOT NULL,
-                updatedAt TEXT NOT NULL,
+                updatedAt TEXT NOT NULL
                 );
                                 """;
 
         String createPasswordTable = """
                 CREATE TABLE IF NOT EXISTS passwords(
                 id TEXT PRIMARY KEY,
+                userId TEXT NOT NULL,
                 service TEXT NOT NULL,
                 encryptedPassword TEXT NOT NULL,
-                ivTEXT NOT NULL,
-                FOREIGN KEY(userId) REFERENCES users(id)
+                iv TEXT NOT NULL,
+                FOREIGN KEY(userId) REFERENCES user_profile(id)
                 );
                 """;
 
