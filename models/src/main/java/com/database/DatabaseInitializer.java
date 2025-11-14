@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.Statement;
 
 public class DatabaseInitializer {
+
     public static void createTables() {
         String createUserTable = """
                 CREATE TABLE IF NOT EXISTS user_profile (
@@ -36,4 +37,5 @@ public class DatabaseInitializer {
             e.printStackTrace();
         }
     }
+
 }
